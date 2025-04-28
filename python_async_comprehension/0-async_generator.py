@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-0-async_generator.py
+0-async_generator
 
 This module contains a coroutine that asynchronously yields
 random numbers between 0 and 10, with a 1-second delay between each.
