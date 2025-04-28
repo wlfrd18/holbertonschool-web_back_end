@@ -2,12 +2,15 @@
 """
 1-async_comprehension
 
-this module contains a coroutine called async_comprehension that takes no arguments
-and return a list of 10 randon numbers by using asynchronous comprehension.
+this module contains a coroutine called
+async_comprehension that takes no arguments
+and return a list of 10 randon numbers
+by using asynchronous comprehension.
 """
 from typing import List
 
 async_generator = __import__('0-async_generator').async_generator
+
 
 async def async_comprehension() -> List[float]:
     """
