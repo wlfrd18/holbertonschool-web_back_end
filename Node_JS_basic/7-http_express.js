@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/students', async (req, res) => {
-  let logs = [];
+  const logs = [];
   const originalLog = console.log;
 
   // Redirige console.log vers notre tableau logs
@@ -26,8 +26,6 @@ app.get('/students', async (req, res) => {
     console.log = originalLog;
     res.type('text/plain');
     res.status(500).send(`This is the list of our students\n${err.message}`);
-  } finally {
-    console.log = originalLog;
   }
 });
 
