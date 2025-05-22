@@ -5,14 +5,12 @@ const readLine = readline.createInterface({
   output: process.stdout,
 });
 
-process.stdout.write('Welcome to Holberton School, what is your name?\n');
+console.log('Welcome to Holberton School, what is your name?');
 
-readLine.on('line', (input) => {
-  // Quand on reçoit une ligne, on affiche la réponse
-  console.log(`Your name is: ${input}`);
-});
+readLine.question('', (name) => {
+  console.log(`Your name is: ${name}`);
 
-// Quand l'utilisateur fait Ctrl+D (EOF), on affiche le message et on ferme
-readLine.on('close', () => {
   console.log('This important software is now closing');
+
+  readLine.close();
 });
