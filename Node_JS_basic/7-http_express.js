@@ -20,12 +20,14 @@ app.get('/students', async (req, res) => {
     // Restaure console.log
     console.log = originalLog;
     res.type('text/plain');
-    res.send(`This is the list of our students\n${logs.join('\n')}`);
+    res.status(200).send(`This is the list of our students\n${logs.join('\n')}`);
   } catch (err) {
     // Restaure console.log en cas d'erreur aussi
     console.log = originalLog;
     res.type('text/plain');
     res.status(500).send(`This is the list of our students\n${err.message}`);
+  } finally {
+    console.log = originalLog;
   }
 });
 
